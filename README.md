@@ -9,11 +9,11 @@
 ✅ - Rename UI components  
 ❌ - Re-order validations  
 ❌ - Invoke controllers  
-❌ - Create responses  
+✅ - Create responses  
 ❌ - Assign responses  
 ❌ - Return response  
 ✅ - Re-locate view runner   
-❌ - Define status codes  
+✅ - Define status codes  
   
 ------------- [ CONTROLLERS ] -------------  
 ❌ - Assign controller's action to an operation  
@@ -21,5 +21,5 @@
 ❌ - Create an operation history (order)  
   
 --------------- [ MODELS ] ----------------  
-❌ - Design models following SOLID args  
+✅ - Design models following SOLID args  
 ❌ - If Needed create an storage  
