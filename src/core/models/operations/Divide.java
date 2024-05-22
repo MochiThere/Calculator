@@ -5,9 +5,8 @@ import core.models.Operation;
 
 public class Divide extends Operation {
 
-    public Divide(double num1, double num2) {
-        super(num1, num2);
-        this.operator = "÷";
+    public Divide() {
+        this.operator = "/";
     }
     
     @Override

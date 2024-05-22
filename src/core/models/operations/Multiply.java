@@ -5,8 +5,7 @@ import core.models.Operation;
 
 public class Multiply extends Operation {
 
-    public Multiply(double num1, double num2) {
-        super(num1, num2);
+    public Multiply() {
         this.operator = "x";
     }
     
