@@ -17,5 +17,9 @@ public class Potency extends Operation{
         
         return acum;
     }
+    
+    public Potency(){
+        this.operator = "^";
+    }
 
 }

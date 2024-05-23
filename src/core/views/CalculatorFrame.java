@@ -218,7 +218,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
         } else {
             output_result.setText(String.format("%.3f", OperationController.getLastResult()));
         }
-        
+                
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void btn_substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_substractActionPerformed
