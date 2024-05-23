@@ -1,8 +1,8 @@
 # Calculator
 
 ## Team :
-- [María José Hernández /200196572/](https://github.com/mariaher05th)
-- [John Ferrer /200199120/](https://github.com/MochiThere)
+- [María José Hernández Fawcett /200196572/](https://github.com/mariaher05th)
+- [John Ferrer Avila /200199120/](https://github.com/MochiThere)
 
 ## Todo-List ✅❌:  
 ---------------- [ VIEWS ] ----------------  
