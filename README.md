@@ -1,6 +1,6 @@
 # Calculator
 
-## Team :
+## Team [NRC 2349]:
 - [María José Hernández Fawcett /200196572/](https://github.com/mariaher05th)
 - [John Ferrer Avila /200199120/](https://github.com/MochiThere)
 
