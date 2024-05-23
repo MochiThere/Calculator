@@ -7,6 +7,8 @@ package core.views;
 import calculator.Calculator;
 import calculator.History;
 import calculator.Operation;
+import core.controllers.OperationController;
+import core.controllers.utils.Response;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.DefaultListModel;
@@ -214,76 +216,82 @@ public class CalculatorFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
-        // TODO add your handling code here:
-        try {
-            Calculator calculator = new Calculator();
-            
-            double number1 = Double.parseDouble(read_number1.getText());
-            double number2 = Double.parseDouble(read_number2.getText());
-            double result = calculator.add(number1, number2);
-            
-            this.history.addOperation(new Operation(number1, number2, "+", result));
-            
-            output_result.setText("" + result);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+        String num1 = read_number1.getText();
+        String num2 = read_number2.getText();
+        
+        Response response = OperationController.exec_add(num1, num2);
+        
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            output_result.setText(String.format("%.3f", OperationController.getLastResult()));
         }
+        
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void btn_substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_substractActionPerformed
-        // TODO add your handling code here:
-        try {
-            Calculator calculator = new Calculator();
-            
-            double number1 = Double.parseDouble(read_number1.getText());
-            double number2 = Double.parseDouble(read_number2.getText());
-            double result = calculator.subtract(number1, number2);
-            
-            this.history.addOperation(new Operation(number1, number2, "-", result));
-            
-            output_result.setText("" + result);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+        String num1 = read_number1.getText();
+        String num2 = read_number2.getText();
+        
+        Response response = OperationController.exec_subs(num1, num2);
+        
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            output_result.setText(String.format("%.3f", OperationController.getLastResult()));
         }
     }//GEN-LAST:event_btn_substractActionPerformed
 
     private void btn_multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_multiplyActionPerformed
         // TODO add your handling code here:
-        try {
-            Calculator calculator = new Calculator();
-            
-            double number1 = Double.parseDouble(read_number1.getText());
-            double number2 = Double.parseDouble(read_number2.getText());
-            double result = calculator.multiply(number1, number2);
-            
-            this.history.addOperation(new Operation(number1, number2, "*", result));
-            
-            output_result.setText("" + result);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+        String num1 = read_number1.getText();
+        String num2 = read_number2.getText();
+        
+        Response response = OperationController.exec_multiply(num1, num2);
+        
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            output_result.setText(String.format("%.3f", OperationController.getLastResult()));
         }
     }//GEN-LAST:event_btn_multiplyActionPerformed
 
     private void btn_divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_divideActionPerformed
         // TODO add your handling code here:
-        try {
-            Calculator calculator = new Calculator();
-            
-            double number1 = Double.parseDouble(read_number1.getText());
-            double number2 = Double.parseDouble(read_number2.getText());
-            double result = calculator.divide(number1, number2);
-            
-            this.history.addOperation(new Operation(number1, number2, "/", result));
-            
-            output_result.setText("" + result);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+        String num1 = read_number1.getText();
+        String num2 = read_number2.getText();
+        
+        Response response = OperationController.exec_div(num1, num2);
+        
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            output_result.setText(String.format("%.3f", OperationController.getLastResult()));
         }
     }//GEN-LAST:event_btn_divideActionPerformed
 
     private void btn_potencyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_potencyActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Not Implemented", "Error", JOptionPane.ERROR_MESSAGE);
+        String num1 = read_number1.getText();
+        String num2 = read_number2.getText();
+        
+        Response response = OperationController.exec_potency(num1, num2);
+        
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            output_result.setText(String.format("%.3f", OperationController.getLastResult()));
+        }
     }//GEN-LAST:event_btn_potencyActionPerformed
 
     private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
@@ -294,13 +302,13 @@ public class CalculatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_clearActionPerformed
 
     private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
-        // TODO add your handling code here:
-        ArrayList<Operation> operationHistory = this.history.getOperations();
-        Collections.reverse(this.history.getOperations());
+       Response response = OperationController.update(output_operations);
         
-        DefaultListModel model = new DefaultListModel();
-        model.addAll(operationHistory);
-        output_operations.setModel(model);
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btn_updateActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

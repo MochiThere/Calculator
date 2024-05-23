@@ -8,8 +8,9 @@ import core.models.calculator.storage.History;
 public class Calculator {
     
     private Operation operator;
+    private static final Calculator instance = new Calculator();
 
-    public Calculator() {
+    private Calculator() {
         
     }
 
@@ -18,16 +19,22 @@ public class Calculator {
     }
     
     public double execute( double a, double b ){
-        // Actualizar los valores para la ejecucion
+        // Refresh the numbers 
         this.operator.setNum1(a);
         this.operator.setNum2(b);
         
-        // Realizar la operacion y agregarla al historial
+        // Do the operation and then add it to the history
         double result =  this.operator.operate();
         History history = History.getInstance();
         history.addOperation(operator);
         
         return result;
+    }
+    
+    
+    
+    public static Calculator getInstance() {
+        return instance;
     }
     
 }

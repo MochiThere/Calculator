@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class History {
     
     private ArrayList<Operation> operations;
-    private static History instance;
+    private static final History instance = new History();
     
     private History ( ){
         this.operations = new ArrayList<>();
