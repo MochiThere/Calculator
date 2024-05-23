@@ -11,10 +11,12 @@ public class History {
     private static final History instance = new History();
     
     private History ( ){
-        this.operations = new ArrayList<>();
+        operations = new ArrayList<>();
+        System.out.println("Created History");
     }
 
     public static History getInstance() {
+        System.out.println("Called");
         return instance;
     }
     
@@ -23,7 +25,8 @@ public class History {
     }
     
     public void addOperation( Operation op ){
-        this.operations.add(op);
+        Operation actual = op.clone();
+        operations.add(actual);
     }
     
     public Operation getOperation( int index ){

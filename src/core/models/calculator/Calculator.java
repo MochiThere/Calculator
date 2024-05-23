@@ -28,6 +28,10 @@ public class Calculator {
         History history = History.getInstance();
         history.addOperation(operator);
         
+        for (Operation op : history.getOperations()) {
+            System.out.println(op);
+        }
+        
         return result;
     }
     

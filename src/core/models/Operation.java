@@ -2,7 +2,7 @@
 package core.models;
 
 
-public abstract class Operation {
+public abstract class Operation implements Cloneable {
     
     protected double num1;
     protected double num2;
@@ -41,7 +41,15 @@ public abstract class Operation {
     public void setOperator(String operator) {
         this.operator = operator;
     }
-
     
+    @Override
+    public Operation clone(){
+        try {
+            return (Operation) super.clone();
+        } catch (CloneNotSupportedException e){
+            System.out.println("Error Clonando :(");
+            return null;
+        }
+    }
     
 }

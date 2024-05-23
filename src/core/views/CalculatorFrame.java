@@ -4,14 +4,8 @@
  */
 package core.views;
 
-import calculator.Calculator;
-import calculator.History;
-import calculator.Operation;
 import core.controllers.OperationController;
 import core.controllers.utils.Response;
-import java.util.ArrayList;
-import java.util.Collections;
-import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,14 +13,10 @@ import javax.swing.JOptionPane;
  * @author edangulo
  */
 public class CalculatorFrame extends javax.swing.JFrame {
-    
-    private History history;
-
     /**
      * Creates new form Calculator
      */
     public CalculatorFrame() {
-        this.history = new History();
         initComponents();
     }
 
